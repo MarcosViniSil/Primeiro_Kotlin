@@ -2,7 +2,7 @@ enum class Nivel { BASICO, INTERMEDIARIO, DIFICIL }
 
 class Usuario(var nome: String)
 
-data class ConteudoEducacional(var nome: String, val nivel: Int = 1)//nivel de dificuldade em ordem ascendente
+data class ConteudoEducacional(var nome: String, val nivel: Nivel)//nivel de dificuldade em ordem ascendente
 
 data class Formacao(val nome: String, var conteudos: List<ConteudoEducacional>) {
 
@@ -32,8 +32,8 @@ fun main() {
     val usuario1 = Usuario("pessoa1")
     val usuario2 = Usuario("pessoa2")
 
-    val conteudo1 = ConteudoEducacional("Java modulo 1", 1)
-    val conteudo2 = ConteudoEducacional("Kotlin modulo 1", 2)
+    val conteudo1 = ConteudoEducacional("Java modulo 1", Nivel.BASICO)
+    val conteudo2 = ConteudoEducacional("Kotlin modulo 1", Nivel.INTERMEDIARIO)
 
     val listaConteudo = mutableListOf(conteudo1, conteudo2)
 
